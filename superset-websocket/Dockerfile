@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-FROM node:16-alpine as build
+FROM node:16.20.2-alpine as build
 
 WORKDIR /home/superset-websocket
 
@@ -22,7 +22,7 @@ RUN npm ci && \
   npm run build
 
 
-FROM node:16-alpine
+FROM node:16.20.2-alpine
 
 ENV NODE_ENV=production
 WORKDIR /home/superset-websocket
